@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+  }
+}
+
+/* Add support for RTL layout */
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.rtl .ltr {
+  direction: ltr;
+  text-align: left;
+}
