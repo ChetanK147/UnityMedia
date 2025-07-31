@@ -529,13 +529,6 @@ function App() {
                 <li className="flex items-start">
                   <CheckIcon className="w-6 h-6 text-creative-500 mr-3 mt-1" />
                   <div>
-                    <h4 className="font-semibold">Full Day Coverage</h4>
-                    <p className="text-gray-600">Up to 8 hours of filming time</p>
-                  </div>
-                </li>
-                <li className="flex items-start">
-                  <CheckIcon className="w-6 h-6 text-creative-500 mr-3 mt-1" />
-                  <div>
                     <h4 className="font-semibold">Raw Footage Delivery</h4>
                     <p className="text-gray-600">Unprocessed files for maximum flexibility</p>
                   </div>
@@ -701,7 +694,7 @@ function App() {
               viewport={{ once: true }}
             >
               <div className="mb-8">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent mb-2">AED 2,000</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent mb-2">AED 3,000</div>
                 <p className="text-xl text-gray-600">Per day production rent per set of camera</p>
               </div>
               
@@ -709,11 +702,9 @@ function App() {
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Service Scope</h4>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Pre-production planning</li>
                     <li>• Professional cinematography</li>
                     <li>• Multi-camera setups</li>
                     <li>• Audio recording</li>
-                    <li>• Lighting design</li>
                   </ul>
                 </div>
               </div>
