@@ -38,38 +38,38 @@ function App() {
     cameras: {
       title: 'Professional Cameras',
       items: [
-        { name: 'Sony FX3', specs: 'Full Frame Cinema Camera', image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Sony A7C II', specs: 'Compact Full Frame Mirrorless', image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&q=80&w=800' },
-        { name: 'RED KOMODO 6K', specs: 'Global Shutter Cinema Camera', image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&q=80&w=800' },
-        { name: 'ARRI Alexa Mini LF', specs: 'Large Format Cinema Camera', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800' }
+        { name: 'Sony FX3', specs: 'Full Frame Cinema Camera', image: 'src/lib/SonyFX3.jpg' },
+        { name: 'Sony A7C II', specs: 'Compact Full Frame Mirrorless', image: 'src/lib/SonyA7Cii.jpg' },
+        { name: 'RED KOMODO 6K', specs: 'Global Shutter Cinema Camera', image: 'src/lib/RED Komodo 6K.jpg' },
+        { name: 'ARRI Alexa Mini LF', specs: 'Large Format Cinema Camera', image: 'src/lib/Arri Alexa Mini LF.jpg' }
       ]
     },
     lenses: {
       title: 'Cinema Lenses',
       items: [
-        { name: 'Sony 16mm f/1.8', specs: 'Ultra-Wide Prime Lens', image: 'https://images.unsplash.com/photo-1606918801925-e2c914c4b503?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Sony 50mm f/1.2 GM', specs: 'Professional Portrait Prime', image: 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Sony 24-70mm f/2.8 GM II', specs: 'Professional Zoom Lens', image: 'https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&q=80&w=800' },
-        { name: 'DZO Vespid Prime Cine Lenses', specs: 'Cinema Prime Lens Set', image: 'https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Cooke S4 Mini', specs: 'Professional Cinema Primes', image: 'https://images.unsplash.com/photo-1617005082133-548c4dd27f35?auto=format&fit=crop&q=80&w=800' }
+        { name: 'Sony 16mm f/1.8', specs: 'Ultra-Wide Prime Lens', image: 'src/lib/Sony 16mm f:1.8.jpg' },
+        { name: 'Sony 50mm f/1.2 GM', specs: 'Professional Portrait Prime', image: 'src/lib/Sony 50mm f:1.8.jpg' },
+        { name: 'Sony 24-70mm f/2.8 GM II', specs: 'Professional Zoom Lens', image: 'src/lib/Sony 24-70mm f:1.8.jpg' },
+        { name: 'DZO Vespid Prime Cine Lenses', specs: 'Cinema Prime Lens Set', image: 'src/lib/DZOFilm Vespid Prime SET.jpg' },
+        { name: 'Cooke S4 Mini', specs: 'Professional Cinema Primes', image: 'src/lib/Cooke SP3 SET.jpg' }
       ]
     },
     accessories: {
       title: 'Accessories & Support',
       items: [
-        { name: 'DJI Ronin S', specs: '3-Axis Handheld Gimbal', image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=800' },
-        { name: 'DJI Ronin RS4 Pro', specs: 'Professional Gimbal Stabilizer', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Sony NPF-Z Battery', specs: 'High Capacity Camera Battery', image: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&q=80&w=800' },
-        { name: 'Professional Tripods', specs: 'Carbon Fiber Support Systems', image: 'https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&q=80&w=800' }
+        { name: 'DJI Ronin S', specs: '3-Axis Handheld Gimbal', image: 'src/lib/DJI Ronin S.jpg' },
+        { name: 'DJI Ronin RS4 Pro', specs: 'Professional Gimbal Stabilizer', image: 'src/lib/DJI RS4Pro.jpg' },
+        { name: 'Sony NPF-Z Battery', specs: 'High Capacity Camera Battery', image: 'src/lib/Sony NP-FZ100.jpg' },
+        { name: 'Professional Tripods', specs: 'Carbon Fiber Support Systems', image: 'src/lib/Professional Tripod.jpg' }
       ]
     },
     lighting: {
       title: 'Lighting & Accessories',
       items: [
-        { name: 'ARRI SkyPanel S60-C', specs: 'LED Softlight', image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80' },
-        { name: 'Aputure 300d Mark II', specs: 'Daylight LED Light', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80' },
-        { name: 'Godox VL300', specs: 'Bi-Color LED Video Light', image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80' },
-        { name: 'C-Stands & Modifiers', specs: 'Complete Grip Package', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80' }
+        { name: 'ARRI SkyPanel S60-C', specs: 'LED Softlight', image: 'src/lib/ARRI Skypanel S60-C.jpg' },
+        { name: 'Aputure 300d Mark II', specs: 'Daylight LED Light', image: 'src/lib/Aputure LS C300d II.jpg' },
+        { name: 'Godox VL300', specs: 'Bi-Color LED Video Light', image: 'src/lib/GODOX VL300.jpg' },
+        { name: 'C-Stands & Modifiers', specs: 'Complete Grip Package', image: 'src/lib/C Stands.jpg' }
       ]
     }
   };
@@ -487,7 +487,7 @@ function App() {
               className="relative"
             >
               <img 
-                src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&q=80&w=800"
+                src="src/lib/DJI Mavic 4pro Creator Combo.jpg"
                 alt="DJI Mavic 4 Pro Drone"
                 className="w-full rounded-lg shadow-lg"
               />
