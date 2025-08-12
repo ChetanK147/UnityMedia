@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   VideoCameraIcon,
@@ -20,11 +22,44 @@ import {
   EyeIcon,
   ChatBubbleLeftRightIcon
 } from '@heroicons/react/24/outline';
+import { AuthProvider } from './contexts/AuthContext';
+import { AuthModal } from './components/auth/AuthModal';
+import { Dashboard } from './components/dashboard/Dashboard';
+import { useAuth } from './contexts/AuthContext';
 
-function App() {
+function AppContent() {
+  const { user, loading } = useAuth();
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600"></div>
+      </div>
+    );
+  }
+
+  if (user) {
+    return <Dashboard />;
+  }
+
+  return <HomePage onAuthOpen={(mode) => {
+    setAuthMode(mode);
+    setAuthModalOpen(true);
+  }} />;
+}
+
+interface HomePageProps {
+  onAuthOpen: (mode: 'signin' | 'signup') => void;
+}
+
+function HomePage({ onAuthOpen }: HomePageProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
   const [activeEquipmentCategory, setActiveEquipmentCategory] = useState('cameras');
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -145,6 +180,22 @@ function App() {
                   {item.label}
                 </motion.button>
               ))}
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                onClick={() => onAuthOpen('signin')}
+                className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+              >
+                Sign In
+              </motion.button>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                onClick={() => onAuthOpen('signup')}
+                className="bg-gradient-to-r from-primary-500 to-accent-500 hover:from-primary-600 hover:to-accent-600 text-white px-4 py-2 rounded-lg font-medium transition-all"
+              >
+                Get Started
+              </motion.button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -184,6 +235,18 @@ function App() {
                     {item.label}
                   </button>
                 ))}
+                <button
+                  onClick={() => onAuthOpen('signin')}
+                  className="block w-full text-left text-gray-600 hover:text-gray-900 py-2 font-medium"
+                >
+                  Sign In
+                </button>
+                <button
+                  onClick={() => onAuthOpen('signup')}
+                  className="block w-full text-left bg-gradient-to-r from-primary-500 to-accent-500 text-white px-4 py-2 rounded-lg font-medium mt-2"
+                >
+                  Get Started
+                </button>
               </div>
             </motion.div>
           )}
@@ -222,10 +285,10 @@ function App() {
               View Equipment
             </button>
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={() => onAuthOpen('signup')}
               className="border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all"
             >
-              Get Quote
+              Get Started
             </button>
           </motion.div>
         </div>
@@ -949,6 +1012,40 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  const [authModalOpen, setAuthModalOpen] = useState(false);
+  const [authMode, setAuthMode] = useState<'signin' | 'signup'>('signin');
+
+  return (
+    <AuthProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            <Route path="/*" element={<AppContent />} />
+          </Routes>
+          
+          <AuthModal
+            isOpen={authModalOpen}
+            onClose={() => setAuthModalOpen(false)}
+            initialMode={authMode}
+          />
+          
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              duration: 4000,
+              style: {
+                background: '#363636',
+                color: '#fff',
+              },
+            }}
+          />
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
